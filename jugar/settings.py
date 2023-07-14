@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-itsthebravo-pp4forums-jx1qvxei7a0.ws-eu101.gitpod.io', 'jugar-forums.herokuapp.com', localhost] 
+ALLOWED_HOSTS = ['8000-itsthebravo-pp4forums-jx1qvxei7a0.ws-eu101.gitpod.io', 'jugar-forums.herokuapp.com', 'localhost'] 
 
 
 # Application definition
@@ -42,9 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage'
+    'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary'
+    'cloudinary',
     'forum',
 ]
 
