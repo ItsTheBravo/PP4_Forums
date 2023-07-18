@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'forum',
+    'django_summernote',
+    'forum', # Should be jugar?
 ]
 
 MIDDLEWARE = [
