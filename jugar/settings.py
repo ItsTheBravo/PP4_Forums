@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-itsthebravo-pp4forums-jx1qvxei7a0.ws-eu101.gitpod.io', 'jugar-forums.herokuapp.com', 'jugar-forums-67f1f1724151.herokuapp.com', 'localhost'] 
+ALLOWED_HOSTS = ['8000-itsthebravo-pp4forums-jx1qvxei7a0.ws-eu101.gitpod.io', '8000-itsthebravo-pp4forums-jx1qvxei7a0.ws-eu102.gitpod.io', 'jugar-forums.herokuapp.com', 'jugar-forums-67f1f1724151.herokuapp.com', 'localhost'] 
 
 
 # Application definition
