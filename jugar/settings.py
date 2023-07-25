@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
-    'forum', # Should be jugar?
+    'forum',  # Should be jugar?
 ]
 
 SITE_ID = 1
