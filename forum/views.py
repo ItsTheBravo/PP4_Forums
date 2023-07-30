@@ -66,13 +66,31 @@ class PostDetail(View):
         )
 
 
-class PostLike(View):
+class PostUpvote(View):
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
+
+        if post.upvotes.filter(id=request.user.id).exists():
+            post.upvotes.remove(request.user)
         else:
-            post.likes.add(request.user)
+            post.upvotes.add(request.user)
+            # Remove the user from downvotes if they clicked upvote
+            post.downvotes.remove(request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class PostDownvote(View):
+
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+
+        if post.downvotes.filter(id=request.user.id).exists():
+            post.downvotes.remove(request.user)
+        else:
+            post.downvotes.add(request.user)
+            # Remove the user from upvotes if they clicked downvote
+            post.upvotes.remove(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
