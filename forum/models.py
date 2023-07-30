@@ -29,6 +29,12 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def number_of_upvotes(self):
+        return self.upvotes.count()
+    
+    def number_of_downvotes(self):
+        return self.downvotes.count()
+
 
 class Comment(models.Model):
 
