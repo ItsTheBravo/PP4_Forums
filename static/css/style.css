@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #1A1A1B;
 }
 
 .brand {
@@ -26,7 +26,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #030303;
 }
 
 .card {
@@ -143,4 +143,9 @@ body {
 
 .main-column {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #1A1A1B;
+}
+
+.navbar {
+    background-color: #1A1A1B;
 }
