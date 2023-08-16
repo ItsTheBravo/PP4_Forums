@@ -18,8 +18,8 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     upvotes = models.ManyToManyField(User, related_name='blog_upvotes', blank=True)
     downvotes = models.ManyToManyField(User, related_name='blog_downvotes', blank=True)
-
-
+    is_approved = models.BooleanField(default=False)
+    
     class Meta:
         ordering = ['-created_on']
 

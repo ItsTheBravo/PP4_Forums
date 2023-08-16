@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
+from django.utils.text import slugify
 
 
 class PostList(generic.ListView):
@@ -94,3 +95,21 @@ class PostDownvote(View):
             post.upvotes.remove(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def create_post(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.slug = slugify(post.title)
+            post.save()
+            return HttpResponseRedirect(reverse('home'))
+    else:
+        form = PostForm()
+
+    return render(request, 'create_post.html', {'form': form})
